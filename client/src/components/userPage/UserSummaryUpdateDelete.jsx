@@ -13,7 +13,7 @@ import Cities from '../Cities';
 const SummaryUpdateDelete = ({ loading, userSummary }) => {
     const userSummaryName = useInput(userSummary.title, { isEmpty: true, maxLenght: 52 })
     const userSummaryDescription = useInput(userSummary.description, { isEmpty: true })
-    const userCost = useInput(userSummary.cost, { isEmpty: true })
+    const userCost = useInput(userSummary.cost, { isEmpty: true, isNotInteger: false})
     const userName = useInput(userSummary.name, { isEmpty: true })
     const userSurname = useInput(userSummary.surname, { isEmpty: true })
     const userContacts = useInput(userSummary.contacts, { isEmpty: true })
@@ -110,6 +110,7 @@ const SummaryUpdateDelete = ({ loading, userSummary }) => {
                         onBlur={e => userCost.onBlur(e)}
                     />
                     {(userCost.isDirty && userCost.isEmpty) && <div className='error'>Поле не должно быть пустым</div>}
+                    {(userCost.isDirty && userCost.isNotInteger) && <div className='error'>Поле должно быть целочисленным</div>}
                     <Form.Text className='summaryAdvertisements-user-upperText'>Имя</Form.Text>
                     <Form.Control
                         placeholder="Введите свое имя"

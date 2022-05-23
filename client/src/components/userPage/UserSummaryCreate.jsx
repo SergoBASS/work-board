@@ -15,7 +15,7 @@ const CreateSummary = () => {
     const history = useHistory()
     const userSummaryName = useInput('', { isEmpty: true, maxLenght: 52 })
     const userSummaryDescription = useInput('', { isEmpty: true })
-    const userCost = useInput(0, { isEmpty: true })
+    const userCost = useInput(0, { isEmpty: true, isNotInteger: false })
     const userName = useInput('', { isEmpty: true })
     const userSurname = useInput('', { isEmpty: true })
     const userContacts = useInput('', { isEmpty: true })
@@ -155,6 +155,7 @@ const CreateSummary = () => {
                         onBlur={e => userCost.onBlur(e)}
                     />
                     {(userCost.isDirty && userCost.isEmpty) && <div className='error'>Поле не должно быть пустым</div>}
+                    {(userCost.isDirty && userCost.isNotInteger) && <div className='error'>Поле должно быть целочисленным</div>}
                     <Form.Text className='summaryAdvertisements-user-upperText'>Тип занятости</Form.Text>
                     <div>
                         {

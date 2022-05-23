@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 
 const useValidation = (value, validatons) => {
     const [isEmpty, setEmpty] = useState(true)
+    const [isNotInteger, setNotInteger] = useState(false)
     const [minLenghtError, setMinLenghtError] = useState(false)
     const [maxLenghtError, setMaxLenghtError] = useState(false)
     const [inputValid, setInputValid] = useState(false)
+
     useEffect(() => {
         for (const validation in validatons) {
             switch (validation) {
@@ -16,8 +18,8 @@ const useValidation = (value, validatons) => {
                     break;
                 case 'isEmpty':
                     if (value) {
-                        if (value === "<p></p>" || value === "<h1></h1>" || value === 
-                        "<h2></h2>" || value === "<h3></h3>" || value === "<h4></h4>" || value === "<h5></h5>" || value === "<h6></h6>" || value ==="<blockquote></blockquote>")
+                        if (value === "<p></p>" || value === "<h1></h1>" || value ===
+                            "<h2></h2>" || value === "<h3></h3>" || value === "<h4></h4>" || value === "<h5></h5>" || value === "<h6></h6>" || value === "<blockquote></blockquote>")
                             setEmpty(true)
                         else
                             setEmpty(false)
@@ -25,22 +27,28 @@ const useValidation = (value, validatons) => {
                     else
                         setEmpty(true)
                     break;
+                case 'isNotInteger':
+                    if (Number.isInteger(Number(value)))
+                        setNotInteger(false)
+                    else
+                        setNotInteger(true)
                 default:
-                    break;    
+                    break;
             }
         }
     }, [value])
 
     useEffect(() => {
-        if (isEmpty || minLenghtError || maxLenghtError) {
+        if (isEmpty || minLenghtError || maxLenghtError || isNotInteger) {
             setInputValid(false)
         } else {
             setInputValid(true)
         }
-    }, [isEmpty, minLenghtError, maxLenghtError])
+    }, [isEmpty, minLenghtError, maxLenghtError, isNotInteger])
 
     return {
         isEmpty,
+        isNotInteger,
         minLenghtError,
         maxLenghtError,
         inputValid

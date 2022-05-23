@@ -18,7 +18,7 @@ const UserAdvertisementPage = () => {
     const userCompanyName = useInput('', { isEmpty: true })
     const userAddres = useInput('', { isEmpty: true })
     const userContacts = useInput('', { isEmpty: true })
-    const userCost = useInput(0, { isEmpty: true })
+    const userCost = useInput(0, { isEmpty: true, isNotInteger: false })
     const [userEmploymentType, setUserEmploymentType] = useState('')
     const [userSchedule, setUserSchedule] = useState('')
     const userTitle = useInput('', { isEmpty: true, maxLenght: 52 })
@@ -154,6 +154,7 @@ const UserAdvertisementPage = () => {
                             onBlur={e => userCost.onBlur(e)}
                         />
                         {(userCost.isDirty && userCost.isEmpty) && <div className='error'>Поле не должно быть пустым</div>}
+                        {(userCost.isDirty && userCost.isNotInteger) && <div className='error'>Поле должно быть целочисленным</div>}
                         <Form.Text className='summaryAdvertisements-user-upperText'>Тип занятости</Form.Text>
                         <div>
                             {

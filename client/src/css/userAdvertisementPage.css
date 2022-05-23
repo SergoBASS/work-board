@@ -1,0 +1,91 @@
+.advBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .summaries-page-avatar {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .summaryAdvertisements-page-header p {
+        font-size: 10pt;
+    }
+
+    .summaryAdvertisements-page-header h3 {
+        font-size: 14pt;
+    }
+
+    .summaryAdvertisements-page-header h4 {
+        font-size: 13pt;
+    }
+
+    .summaries-page-avatar {
+        max-width: 220px;
+        max-height: 220px;
+    }
+
+    .summaries-page-description h1 {
+        font-size: 14pt;
+    }
+
+    .summaries-page-description h2 {
+        font-size: 13pt;
+    }
+
+    .summaries-page-description h3, h4, h5, h6 {
+        font-size: 12pt;
+    }
+
+    .summaries-page-description p, span {
+        font-size: 10pt;
+    }
+
+    .summaryAdvertisements-user-page-main .btn {
+        font-size: 10pt;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .summaryAdvertisements-page-header p {
+        font-size: 8pt;
+    }
+
+    .summaryAdvertisements-page-header h3 {
+        font-size: 12pt;
+    }
+
+    .summaryAdvertisements-page-header h4 {
+        font-size: 11pt;
+    }
+
+    .summaries-page-avatar {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .summaries-page-description h1 {
+        font-size: 12pt;
+    }
+
+    .summaries-page-description h2 {
+        font-size: 11pt;
+    }
+
+    .summaries-page-description h3, h4, h5, h6 {
+        font-size: 10pt;
+    }
+
+    .summaries-page-description p, span {
+        font-size: 8pt;
+    }
+
+    .summaryAdvertisements-user-page-main .btn {
+        font-size: 8pt;
+    }
+}

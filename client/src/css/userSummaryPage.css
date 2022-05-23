@@ -1,0 +1,72 @@
+.summaryBlock {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-summaries-page-avatar-block {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.user-summaries-page-avatar {
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 35px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+}
+
+.userSummary-main-info {
+    margin-right: auto;
+    width: 50%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .user-summaries-page-avatar-block .user-summaries-page-avatar {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .user-summaries-page-avatar-block .user-summaries-page-avatar{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .user-summaries-page-avatar-block {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 767px) {
+    .user-summaries-page-avatar-block .user-summaries-page-avatar{
+        max-width: 220px;
+        max-height: 220px;
+    }
+    .user-summaries-page-avatar-block {
+        max-width: 45%;
+    }
+
+    .summaryAdvertisements-page-main .btn {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-summaries-page-avatar-block .user-summaries-page-avatar{
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .user-summaries-page-avatar-block {
+        max-width: 45%;
+    }
+    
+    .summaryAdvertisements-page-main .btn {
+        font-size: 8pt;
+    }
+}

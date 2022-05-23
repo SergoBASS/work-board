@@ -1,0 +1,41 @@
+.advertisements-item-title-cost-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.advertisements-item-title-cost-block h2{
+    margin-bottom: 0;
+}
+
+.advertisements-item-title {
+    margin: 0;
+    max-width: 70%;
+    text-decoration: none;
+}
+
+.advertisements-item-cost {
+    margin-left: auto;
+}
+
+@media (max-width: 767px) {
+    .advertisements-item-title-cost-block h2 {
+        font-size: 14pt;
+    }
+
+    .advertisements-item-main p {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 480px) {
+    .advertisements-item-title{
+        max-width: 50%;
+    }
+    .advertisements-item-title-cost-block h2 {
+        font-size: 12pt;
+    }
+
+    .advertisements-item-main p {
+        font-size: 8pt;
+    }
+}

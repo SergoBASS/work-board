@@ -1,0 +1,46 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authCard {
+    width: 600px;
+    padding: 2em 1em 2em 1em;
+}
+
+.authCard h2 {
+    margin: auto;
+}
+
+.authInput {
+    margin-bottom: 1em
+}
+
+.submitRow {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 650px) {
+    .authCard h2 {
+        font-size: 14pt;
+    }
+    .authCard .authInput {
+        font-size: 10pt;
+    }
+
+    .authCard .upper-text {
+        font-size: 9pt;
+    }
+}
+
+@media (max-width: 510px) {
+    .authCard h2 {
+        font-size: 12pt;
+    }
+    .authCard .authInput, .upper-text {
+        font-size: 8pt;
+    }
+}

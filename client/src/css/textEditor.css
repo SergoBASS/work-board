@@ -1,0 +1,26 @@
+.editor {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+}
+
+.blockType .rdw-dropdown-wrapper, .rdw-block-dropdown {
+    width: 150px;
+}
+
+.rdw-editor-toolbar {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 767px) {
+    .editor {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 510px) {
+    .editor {
+        font-size: 8pt;
+    }
+}

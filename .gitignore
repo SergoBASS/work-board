@@ -1,0 +1,5 @@
+/client/node_modules
+/client/google_maps.txt
+/client/build
+
+/server/node_modules

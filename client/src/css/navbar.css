@@ -1,0 +1,61 @@
+.navBar{
+    background-color:#E9B801;
+}
+.cityLinkStyle{
+    color: #222522 !important;
+}
+.cityLinkStyle:hover{
+    color: #E4E4E4 !important;
+}
+.brandName{
+    margin-right: 2em;
+    color:#222522;
+    text-decoration: none;   
+}
+.brandName:hover{
+    text-decoration: underline; 
+    color:#E4E4E4;
+}
+.summary{
+    color:#222522;
+    text-decoration: none;   
+}
+.summary:hover{
+    color:#E4E4E4;
+}
+.navUserSummary{
+    margin-left: auto; 
+}
+.navProfileManagement{
+    display: flex;
+    flex-direction: row;
+    
+}
+.navButtons{
+    margin-left: 2em;
+}
+
+@media (max-width: 767px) {
+    .navBar a{
+        font-size: 10pt;
+    }
+
+ }
+
+ @media (max-width: 650px) {
+    .navBar a{
+        font-size: 9pt;
+    }
+}
+
+@media (max-width: 510px) {
+    .navBar a{
+        font-size: 8pt;
+    }
+}
+
+@media (max-width: 360px) {
+    .navBar a{
+        font-size: 6pt;
+    }
+}

@@ -22,7 +22,7 @@ const summaryList = observer(({summary}) => {
                         <div className='summaries-description-list-block'>
                             <div>
                                 <p>{smry.name + " " + smry.surname}</p>
-                                <p>Тип занятости: {smry.employment_type}</p>
+                                <p>{smry.employment_type}</p>
                                 {smry.work_experience === true
                                     ?
                                     <p>Есть опыт работы</p>

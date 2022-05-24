@@ -60,8 +60,14 @@ const useInput = (initialValue, validation) => {
     const [isDirty, setDirty] = useState(false)
     const valid = useValidation(value, validation)
 
+    const maxNumLenght = 11
+
     const onChange = (e) => {
         setValue(e.target.value)
+    }
+
+    const setNumValue = (val) =>{
+        setValue(val.slice(0, maxNumLenght))
     }
 
     const setValueDirectly = (val) => {
@@ -80,6 +86,7 @@ const useInput = (initialValue, validation) => {
         value,
         isDirty,
         onChange,
+        setNumValue,
         setValueDirectly,
         loadData,
         onBlur,

@@ -106,7 +106,7 @@ const SummaryUpdateDelete = ({ loading, userSummary }) => {
                         className='summaryAdvertisements-user-page-input'
                         type="number"
                         value={userCost.value}
-                        onChange={e => userCost.onChange(e)}
+                        onChange={e => userCost.setNumValue(e.target.value)}
                         onBlur={e => userCost.onBlur(e)}
                     />
                     {(userCost.isDirty && userCost.isEmpty) && <div className='error'>Поле не должно быть пустым</div>}

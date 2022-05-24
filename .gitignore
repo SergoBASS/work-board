@@ -1,6 +1,8 @@
 /client/node_modules
 /client/google_maps.txt
 /client/build
+/client/.env
 
 /server/node_modules
 /server/static
+/client/.env

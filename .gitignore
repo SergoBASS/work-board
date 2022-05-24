@@ -4,5 +4,4 @@
 /client/.env
 
 /server/node_modules
-/server/static
 /server/.env

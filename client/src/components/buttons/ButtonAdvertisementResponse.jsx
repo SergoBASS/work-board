@@ -31,7 +31,7 @@ const ButtonAdvertisementResponse = observer(({ adv }) => {
     }
     
     return (
-        <div>
+        <div className='mt-1'>
             {
                 user.isAuth && user._user.role === "WORKER"
                     ?

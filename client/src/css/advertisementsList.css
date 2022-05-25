@@ -16,6 +16,14 @@
 .advertisements-item-cost {
     margin-left: auto;
 }
+.advertisements-item-main{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.advertisements-item-main p {
+    margin-bottom: 0.5em;
+}
+
 
 @media (max-width: 767px) {
     .advertisements-item-title-cost-block h2 {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'react-bootstrap';
+import { Card, Form, Image } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite'
 import '../css/summariesList.css'
 import '../css/main.css'
@@ -21,8 +21,10 @@ const summaryList = observer(({summary}) => {
                         <hr />
                         <div className='summaries-description-list-block'>
                             <div>
-                                <p>{smry.name + " " + smry.surname}</p>
+                                <p>{smry.name + " " + smry.surname}, {smry.city}</p>
+                                <Form.Text>Тип занятости</Form.Text>
                                 <p>{smry.employment_type}</p>
+                                <Form.Text>Опыт работы</Form.Text>
                                 {smry.work_experience === true
                                     ?
                                     <p>Есть опыт работы</p>

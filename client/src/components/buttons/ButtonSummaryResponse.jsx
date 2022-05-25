@@ -29,7 +29,7 @@ const ButtonSummaryResponse = observer(({ smry }) => {
         }
     }
     return (
-        <div>
+        <div className='mt-1'>
             {
                 user.isAuth && user._user.role === "EMPLOYER"
                     ?

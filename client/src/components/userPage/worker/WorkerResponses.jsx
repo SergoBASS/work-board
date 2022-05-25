@@ -13,7 +13,7 @@ const WorkerResponses = () => {
     }, [id])
 
     return (
-        <Card className='summaryAdvertisements-page-main border-top-0'>
+        <Card className='user-page-main'>
             <h1>Ваши отклики</h1>
             {Array.isArray(userResponsesPage) ? <AdvertisementsList advertisement={userResponsesPage} /> : <h1>{userResponsesPage.message}</h1>}
         </Card>

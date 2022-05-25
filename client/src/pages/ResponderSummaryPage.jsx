@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Card, Container, Image, Spinner } from 'react-bootstrap';
+import { Card, Container, Form, Image, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 import '../css/summaryPage.css'
 import '../css/main.css'
@@ -44,18 +44,25 @@ const ResponderSummaryPage = observer(() => {
                         <div className='summaryAdvertisements-page-header'>
                             <div>
                                 <h3>{summaryPage.title}</h3>
-                                <h4>Желаемая зарплата: {summaryPage.cost} руб./месяц</h4>
+                                <Form.Text>Желаемая зарплата</Form.Text>
+                                <h4>{summaryPage.cost} руб./месяц</h4>
                                 <p>{summaryPage.name + " " + summaryPage.surname}</p>
-                                <p>Год рождения: {String(summaryPage.birstday).split('-')[2] + '.' + String(summaryPage.birstday).split('-')[1] + '.' + String(summaryPage.birstday).split('-')[0]}</p>
-                                <p>Город: {summaryPage.city}</p>
-                                <p>Тип занятости: {summaryPage.employment_type}</p>
+                                <Form.Text>Год рождения</Form.Text>
+                                <p>{String(summaryPage.birstday).split('-')[2] + '.' + String(summaryPage.birstday).split('-')[1] + '.' + String(summaryPage.birstday).split('-')[0]}</p>
+                                <Form.Text>Город</Form.Text>
+                                <p>{summaryPage.city}</p>
+                                <Form.Text>Тип занятости</Form.Text>
+                                <p>{summaryPage.employment_type}</p>
+                                <Form.Text>Опыт работы</Form.Text>
                                 {summaryPage.work_experience === true
                                     ?
                                     <p>Есть опыт работы</p>
                                     :
                                     <p>Без опыта работы</p>}
-                                <p>Контакты: {summaryPage.contacts}</p>
-                                <p>Образование: {summaryPage.education}</p>
+                                <Form.Text>Контакты</Form.Text>
+                                <p>{summaryPage.contacts}</p>
+                                <Form.Text>Образование</Form.Text>
+                                <p>{summaryPage.education}</p>
                             </div>
                             <div className='summaries-page-avatar-block'>
                                 {

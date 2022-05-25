@@ -20,6 +20,8 @@
     display: flex;
     flex-direction: row;
     margin-bottom: auto;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 .summaries-item-avatar-block{
     margin-left: auto;
@@ -78,7 +80,6 @@
     }
     .summaries-item-workName-block h2{
         font-size: 12pt;
-        margin-bottom: 0.8em;
     }
     .summaries-item-workName {
         max-width: 50%;

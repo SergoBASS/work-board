@@ -14,7 +14,7 @@ const WorkerResponders = ({ userRole }) => {
     }, [id])
     
     return (
-        <Card className='summaryAdvertisements-page-main border-top-0'>
+        <Card className='user-page-main'>
             <h1>Откликнувшиеся на вас</h1>
             {Array.isArray(userResponders) ? <RespondersList userResponders={userResponders} workerRole={userRole} /> : <h1>{userResponders.message}</h1>}
         </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite'
 import '../css/advertisementsList.css'
 import '../css/main.css'
@@ -19,9 +19,11 @@ const AdvertisementsList = observer(({advertisement}) => {
                         </div>
                         <hr />
                         <div className='advertisements-item-main'>
-                            <p>{adv.company_name}</p>
-                            <p>Тип занятости: {adv.employment_type}</p>
-                            <p>График работы: {adv.schedule}</p>
+                            <p>{adv.company_name}, {adv.city}, {adv.addres}</p>
+                            <Form.Text>Тип занятости</Form.Text>
+                            <p>{adv.employment_type}</p>
+                            <Form.Text>График работы</Form.Text>
+                            <p>{adv.schedule}</p>
                         </div>
                         <ButtonAdvertisementResponse adv={adv}/>
                     </Card>

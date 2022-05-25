@@ -19,8 +19,8 @@ const UserEmployer = () => {
     }, [])
 
     return (
-        <Tabs defaultActiveKey="summaryControl" className='tab'>
-            <Tab eventKey="summaryControl" title="Управление вакансиями">
+        <Tabs defaultActiveKey="advertisementControl" className='tab'>
+            <Tab eventKey="advertisementControl" title="Управление вакансиями">
                 <EmployerAdvertisementControl />
             </Tab>
             <Tab eventKey="userResponses" title="Ваши отклики">

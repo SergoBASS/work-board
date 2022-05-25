@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Card, Spinner } from 'react-bootstrap';
+import { Button, Card, Form, Spinner } from 'react-bootstrap';
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { checkUserAdvertisement } from '../../../http/userAPI';
 import { USER_ADVERTISEMENT_CREATE_ROUTE, USER_ADVERTISEMENT_ROUTE } from '../../../utils/const';
@@ -28,7 +28,7 @@ const EmployerAdvertisementControl = () => {
           )
     }
     return (
-        <Card className='summaryAdvertisements-page-main border-top-0'>
+        <Card className='user-page-main'>
             <h1>Управление вакансиями</h1>
             <div className='ms-auto'>
                 <Button className="bsType2Style" onClick={() => history.push(USER_ADVERTISEMENT_CREATE_ROUTE + '/' + user.user.id)}>Добавить</Button>
@@ -42,9 +42,11 @@ const EmployerAdvertisementControl = () => {
                         </div>
                         <hr />
                         <div className='advertisements-item-main'>
-                            <p>{advertisement.company_name}</p>
-                            <p>Тип занятости: {advertisement.employment_type}</p>
-                            <p>График работы: {advertisement.schedule}</p>
+                            <p>{advertisement.company_name}, {advertisement.city}, {advertisement.addres}</p>
+                            <Form.Text>Тип занятости</Form.Text>
+                            <p>{advertisement.employment_type}</p>
+                            <Form.Text>График работы</Form.Text>
+                            <p>{advertisement.schedule}</p>
                         </div>
                     </Card>
                 )

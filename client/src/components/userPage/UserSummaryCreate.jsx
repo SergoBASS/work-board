@@ -77,6 +77,7 @@ const CreateSummary = () => {
         <Card className="summaryAdvertisements-user-page-main">
             <h1>Ваше резюме</h1>
             <div className='summaryBlock'>
+                <Form.Text>Ваше фото</Form.Text>
                 <Form.Control
                     type='file'
                     className='summaryAdvertisements-user-page-input'

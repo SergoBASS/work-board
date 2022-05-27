@@ -41,6 +41,8 @@ const AdvertisementsSummaries = observer(() => {
     useEffect(() => {
         setAdvertisementFillter({ status: false, employmentValue: 'all', scheduleValue: 'all' })
         setSummaryFillter({ status: false, employmentValue: 'all', experienceValue: 'all', educationValue: 'all' })
+        advertisement.setPage(1)
+        summary.setPage(1)
     }, [searchBy])
 
     useEffect(() => {//ЗАГРУЗКА ОТКЛИКОВ ПОЛЬЗОВАТЕЛЯ
@@ -55,12 +57,14 @@ const AdvertisementsSummaries = observer(() => {
             fetchAdvertisement(searchValue, city.city, 1, advertisement.limit).then(data => {
                 advertisement.setAdvertisement(data.rows)
                 advertisement.setTotalCount(data.count)
+                advertisement.setPage(1)
             })
         }
         else
             fetchSummary(searchValue, city.city, 1, advertisement.limit).then(data => {
                 summary.setSummary(data.rows)
                 summary.setTotalCount(data.count)
+                summary.setPage(1)
             })
 
     }, [searchBy, searchValue, city.city])

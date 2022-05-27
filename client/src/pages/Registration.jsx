@@ -36,6 +36,7 @@ const Registration = () => {
                     </Form.Text>
                     <Form.Control
                         placeholder="Введите E-mail"
+                        className="authInput"
                         name="email"
                         type='email'
                         value={values.email}
@@ -49,6 +50,7 @@ const Registration = () => {
                     </Form.Text>
                     <Form.Control
                         placeholder="Введите пароль"
+                        className="authInput"
                         name="password"
                         type='password'
                         value={values.password}
@@ -62,6 +64,7 @@ const Registration = () => {
                     </Form.Text>
                     <Form.Control
                         placeholder="Введите пароль"
+                        className="authInput"
                         name="password2"
                         type='password'
                         value={values.password2}

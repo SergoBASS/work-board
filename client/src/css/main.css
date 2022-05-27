@@ -97,6 +97,7 @@ nav .bsType1Style:hover {
    display: flex;
    flex-direction: row;
    margin-top: 2em;
+   margin-bottom: 2em;
    width: 100%;
 }
 
@@ -192,6 +193,10 @@ nav .bsType1Style:hover {
    box-shadow: 0px 0px 15px 6px rgba(34, 60, 80, 0.25);
 }
 
+
+.pagination{
+   margin-bottom: 0;
+}
 @media (min-width: 768px) and (max-width: 991px) {
    .advSmry-main {
       flex-direction: column;

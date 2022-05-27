@@ -78,9 +78,9 @@ const UserAdvertisementPage = () => {
         }
     }
 
-    const deleteUserAdvertisement = () => {
+    const deleteUserAdvertisement = async () => {
         try {
-            deleteAdvertisement(id)
+            await deleteAdvertisement(id)
             history.push(USER_ROUTE)
         } catch (error) {
             console.log(error)

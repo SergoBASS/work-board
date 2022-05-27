@@ -23,6 +23,10 @@
     justify-content: space-between;
 }
 
+.authCard .error{
+    margin-bottom: 0;
+}
+
 @media (max-width: 650px) {
     .authCard h2 {
         font-size: 14pt;

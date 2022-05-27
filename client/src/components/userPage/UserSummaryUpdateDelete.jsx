@@ -77,9 +77,9 @@ const SummaryUpdateDelete = ({ loading, userSummary }) => {
         }
     }
 
-    const deleteUserSummary = () => {
+    const deleteUserSummary = async () => {
         try {
-            deleteSummary(userSummary.id)
+            await deleteSummary(userSummary.id)
             history.push(ADVERTISMENTS_AND_SUMMARIES_ROUTE)
         } catch (error) {
             console.log(error)

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Card, Container, Form, Image } from 'react-bootstrap';
+import { Card, Container, Form, Image, Spinner } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom'
 import '../css/summaryPage.css'
 import '../css/main.css'
@@ -18,17 +18,31 @@ const SummaryPage = observer(() => {
     const { summary } = useContext(Context)
     const { user } = useContext(Context)
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         fetchOneSummary(id).then(data => {
-            if (data)
+            if (data){
                 setSummaryPage(data)
+                setLoading(false)
+            }     
             else
-                history.push(ADVERTISMENT_PAGE_ROUTE)
+                history.push(ADVERTISMENT_PAGE_ROUTE) 
         })
         if (user.isAuth && user._user.role === 'EMPLOYER')
             getUserSummaryResponse(user._user.id).then(data => summary.setUserSummaries(data))
     }, [])
 
+
+    if (loading) {
+        return (
+            <div className='loading'>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        )
+    }
 
     return (
         <Container className="summaryAdvertisements-page-content">

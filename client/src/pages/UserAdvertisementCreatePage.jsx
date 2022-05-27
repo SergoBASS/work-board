@@ -34,7 +34,6 @@ const UserAdvertisementCreatePage = () => {
         } catch (error) {
             console.log(error)
         }
-        console.log(userCity.value)
     }
 
 

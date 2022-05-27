@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Card, Container, Form } from 'react-bootstrap';
+import { Card, Container, Form, Spinner } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom'
 import '../css/advertisementPage.css'
 import '../css/main.css'
@@ -18,10 +18,14 @@ const AdvertisementPage = observer(() => {
     const { advertisement } = useContext(Context)
     const { user } = useContext(Context)
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         fetchOneAdvertisement(id).then(data => {
-            if (data)
+            if (data){
                 setAdvertisementPage(data)
+                setLoading(false)
+            }
             else
                 history.push(ADVERTISMENTS_AND_SUMMARIES_ROUTE)
         })
@@ -29,6 +33,16 @@ const AdvertisementPage = observer(() => {
         if (user.isAuth && user._user.role === 'WORKER')
             getUserAdvertisementResponse(user._user.id).then(data => advertisement.setUserAdvertisement(data))
     }, [])
+    
+    if (loading) {
+        return (
+            <div className='loading'>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        )
+    }
 
     return (
         <Container className="summaryAdvertisements-page-content">

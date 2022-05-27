@@ -23,17 +23,17 @@ class UserController {
 
         const { email, password, role } = req.body
 
-        if (!email || !password) {
+        if (!String(email).toLocaleLowerCase() || !password) {
             return next(ApiError.badRequest('Некорректный email или пароль'))
         }
-        const candidate = await User.findOne({ where: { email } })
+        const candidate = await User.findOne({ where: { email: String(email).toLocaleLowerCase() } })
 
         if (candidate) {
             return next(ApiError.badRequest('Пользовтель с таким email уже существует'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
-        const user = await User.create({ email, role, password: hashPassword })
-        const token = generateJwt(user.id, email, user.role)
+        const user = await User.create({ email: String(email).toLocaleLowerCase(), role, password: hashPassword })
+        const token = generateJwt(user.id, String(email).toLocaleLowerCase(), user.role)
         return res.json({token})
 
     }
@@ -44,7 +44,7 @@ class UserController {
         }
         
         const {email, password} = req.body
-        const user = await User.findOne({where: {email}})
+        const user = await User.findOne({where: {email: String(email).toLocaleLowerCase()}})
         if(!user){
             return next(ApiError.internal('Пользователь не найден'))
         }

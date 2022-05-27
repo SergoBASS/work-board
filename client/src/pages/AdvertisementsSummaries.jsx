@@ -80,7 +80,7 @@ const AdvertisementsSummaries = observer(() => {
                 advertisement.setAdvertisement(data.rows)
                 advertisement.setTotalCount(data.count)
             })
-    }, [advertisement.page])
+    }, [advertisement.page, advertisementFillter])
 
     useEffect(() => {//СМЕНА КНОПКИ В ПАНЕЛИ ПАГИНАЦИИ ДЛЯ РЕЗЮМЕ
         if (!summaryFillter)
@@ -93,44 +93,32 @@ const AdvertisementsSummaries = observer(() => {
                 summary.setSummary(data.rows)
                 summary.setTotalCount(data.count)
             })
-    }, [summary.page])
+    }, [summary.page, summaryFillter])
 
     const filterAdvData = (employmentValue, scheduleValue) => {//ФИЛЬТР ВАКАНСИЙ
-        if (employmentValue !== 'all' || scheduleValue !== 'all')
-            fetchFilteredAdvertisement(searchValue, city.city, 1, advertisement.limit, employmentValue, scheduleValue).then(data => {
-                advertisement.setAdvertisement(data.rows)
-                advertisement.setTotalCount(data.count)
-                advertisement.setPage(1)
-                setAdvertisementFillter({ status: true, employmentValue: employmentValue, scheduleValue: scheduleValue })
-            })
-        else {
-            fetchAdvertisement(searchValue, city.city, advertisement.page, advertisement.limit).then(data => {
-                advertisement.setAdvertisement(data.rows)
-                advertisement.setTotalCount(data.count)
-                advertisement.setPage(1)
-                setAdvertisementFillter({ status: false, employmentValue: 'all', scheduleValue: 'all' })
-            })
+        advertisement.setPage(1)
+        if (employmentValue !== 'all' || scheduleValue !== 'all'){
+            advertisement.setPage(1)
+            setAdvertisementFillter({ status: true, employmentValue: employmentValue, scheduleValue: scheduleValue })
         }
+        else{
+            advertisement.setPage(1)
+            setAdvertisementFillter({ status: false, employmentValue: 'all', scheduleValue: 'all' })
+        }     
     }
 
     const filterSmryData = (employmentValue, experienceValue, educationValue) => {//ФИЛЬТР РЕЗЮМЕ
         if (employmentValue !== 'all' || experienceValue !== 'all' || educationValue !== 'all') {
-            fetchFilteredSummary(searchValue, city.city, 1, advertisement.limit, employmentValue, experienceValue, educationValue).then(data => {
-                summary.setSummary(data.rows)
-                summary.setTotalCount(data.count)
-                summary.setPage(1)
-                setSummaryFillter({ status: false, employmentValue: employmentValue, experienceValue: experienceValue, educationValue: educationValue })
-            })
+            summary.setPage(1)
+            setSummaryFillter({ status: false, employmentValue: employmentValue, experienceValue: experienceValue, educationValue: educationValue })
         }
-        else {
-            fetchSummary(searchValue, city.city, 1, advertisement.limit).then(data => {
-                summary.setSummary(data.rows)
-                summary.setTotalCount(data.count)
-                summary.setPage(1)
-                setSummaryFillter({ status: false, employmentValue: 'all', experienceValue: 'all', educationValue: 'all' })
-            })
+        else{
+            summary.setPage(1)
+            setSummaryFillter({ status: false, employmentValue: 'all', experienceValue: 'all', educationValue: 'all' })
         }
+           
     }
+
     return (
         <div>
             <SearchForm setSearch={setSearch} />

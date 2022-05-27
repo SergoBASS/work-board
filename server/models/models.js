@@ -15,7 +15,7 @@ const Advertisment = sequelize.define('advertisment', {
     company_name: { type: DataTypes.STRING, allowNull: false },
     addres: { type: DataTypes.STRING, allowNull: false },
     contacts: { type: DataTypes.STRING, allowNull: false },
-    cost: { type: DataTypes.BIGINT.UNSIGNED, allowNull: false },
+    cost: { type: DataTypes.BIGINT, allowNull: false },
     title: { type: DataTypes.TEXT('tiny'), allowNull: false },
     description: { type: DataTypes.TEXT },
     employment_type : { type: DataTypes.TEXT, allowNull: false },
@@ -34,7 +34,7 @@ const Summary = sequelize.define('summary', {
     education: { type: DataTypes.TEXT, allowNull: false },
     title: { type: DataTypes.TEXT('tiny'), allowNull: false },
     description: { type: DataTypes.TEXT, allowNull: false },
-    cost: { type: DataTypes.BIGINT.UNSIGNED, allowNull: false },
+    cost: { type: DataTypes.BIGINT, allowNull: false },
     avatar: { type: DataTypes.STRING, allowNull: true }
 })
 

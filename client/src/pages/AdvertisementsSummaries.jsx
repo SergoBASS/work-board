@@ -70,13 +70,13 @@ const AdvertisementsSummaries = observer(() => {
         }
         else {
             if (!summaryFillter)
-                fetchSummary(searchValue, city.city, 1, advertisement.limit).then(data => {
+                fetchSummary(searchValue, city.city, 1, summary.limit).then(data => {
                     summary.setSummary(data.rows)
                     summary.setTotalCount(data.count)
                     summary.setPage(1)
                 })
             else
-                fetchFilteredSummary(searchValue, city.city, 1, advertisement.limit, summaryFillter.employmentValue, summaryFillter.experienceValue, summaryFillter.educationValue).then(data => {
+                fetchFilteredSummary(searchValue, city.city, 1, summary.limit, summaryFillter.employmentValue, summaryFillter.experienceValue, summaryFillter.educationValue).then(data => {
                     summary.setPage(1)
                     summary.setSummary(data.rows)
                     summary.setTotalCount(data.count)
@@ -104,7 +104,7 @@ const AdvertisementsSummaries = observer(() => {
                 summary.setTotalCount(data.count)
             })
         else
-            fetchFilteredSummary(searchValue, city.city, summary.page, advertisement.limit, summaryFillter.employmentValue, summaryFillter.experienceValue, summaryFillter.educationValue).then(data => {
+            fetchFilteredSummary(searchValue, city.city, summary.page, summary.limit, summaryFillter.employmentValue, summaryFillter.experienceValue, summaryFillter.educationValue).then(data => {
                 summary.setSummary(data.rows)
                 summary.setTotalCount(data.count)
             })

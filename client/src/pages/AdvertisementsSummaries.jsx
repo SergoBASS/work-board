@@ -54,19 +54,34 @@ const AdvertisementsSummaries = observer(() => {
 
     useEffect(() => {//СМЕНА ЗНАЧЕНИЯ ПОИСКА, ГОРОДА
         if (searchBy === "advertisement") {
-            fetchAdvertisement(searchValue, city.city, 1, advertisement.limit).then(data => {
-                advertisement.setAdvertisement(data.rows)
-                advertisement.setTotalCount(data.count)
-                advertisement.setPage(1)
-            })
+            if (!advertisementFillter)
+                fetchAdvertisement(searchValue, city.city, 1, advertisement.limit).then(data => {
+                    advertisement.setAdvertisement(data.rows)
+                    advertisement.setTotalCount(data.count)
+                    advertisement.setPage(1)
+                })
+            else {
+                fetchFilteredAdvertisement(searchValue, city.city, 1, advertisement.limit, advertisementFillter.employmentValue, advertisementFillter.scheduleValue).then(data => {
+                    advertisement.setPage(1)
+                    advertisement.setAdvertisement(data.rows)
+                    advertisement.setTotalCount(data.count)
+                })
+            }
         }
-        else
-            fetchSummary(searchValue, city.city, 1, advertisement.limit).then(data => {
-                summary.setSummary(data.rows)
-                summary.setTotalCount(data.count)
-                summary.setPage(1)
-            })
-
+        else {
+            if (!summaryFillter)
+                fetchSummary(searchValue, city.city, 1, advertisement.limit).then(data => {
+                    summary.setSummary(data.rows)
+                    summary.setTotalCount(data.count)
+                    summary.setPage(1)
+                })
+            else
+                fetchFilteredSummary(searchValue, city.city, 1, advertisement.limit, summaryFillter.employmentValue, summaryFillter.experienceValue, summaryFillter.educationValue).then(data => {
+                    summary.setPage(1)
+                    summary.setSummary(data.rows)
+                    summary.setTotalCount(data.count)
+                })
+        }
     }, [searchBy, searchValue, city.city])
 
     useEffect(() => {//СМЕНА КНОПКИ В ПАНЕЛИ ПАГИНАЦИИ ДЛЯ ВАКАНСИИ
@@ -97,14 +112,14 @@ const AdvertisementsSummaries = observer(() => {
 
     const filterAdvData = (employmentValue, scheduleValue) => {//ФИЛЬТР ВАКАНСИЙ
         advertisement.setPage(1)
-        if (employmentValue !== 'all' || scheduleValue !== 'all'){
+        if (employmentValue !== 'all' || scheduleValue !== 'all') {
             advertisement.setPage(1)
             setAdvertisementFillter({ status: true, employmentValue: employmentValue, scheduleValue: scheduleValue })
         }
-        else{
+        else {
             advertisement.setPage(1)
             setAdvertisementFillter({ status: false, employmentValue: 'all', scheduleValue: 'all' })
-        }     
+        }
     }
 
     const filterSmryData = (employmentValue, experienceValue, educationValue) => {//ФИЛЬТР РЕЗЮМЕ
@@ -112,11 +127,11 @@ const AdvertisementsSummaries = observer(() => {
             summary.setPage(1)
             setSummaryFillter({ status: false, employmentValue: employmentValue, experienceValue: experienceValue, educationValue: educationValue })
         }
-        else{
+        else {
             summary.setPage(1)
             setSummaryFillter({ status: false, employmentValue: 'all', experienceValue: 'all', educationValue: 'all' })
         }
-           
+
     }
 
     return (

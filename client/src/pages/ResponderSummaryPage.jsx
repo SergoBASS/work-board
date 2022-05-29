@@ -38,7 +38,7 @@ const ResponderSummaryPage = observer(() => {
             {
                 Object.keys(summaryPage).length === 1
                     ?
-                    <h1 >{summaryPage.message}</h1>
+                    <h1 className='nothing-to-find'>{summaryPage.message}</h1>
                     :
                     <Card className="summaryAdvertisements-page-main">
                         <div className='summaryAdvertisements-page-header'>

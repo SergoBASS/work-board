@@ -157,20 +157,6 @@ nav .bsType1Style:hover {
    margin-bottom: 1em;
 }
 
-
-.list-container {
-   width: 100%;
-}
-
-.list-container .response-title {
-   margin-top: 1em;
-}
-
-.list-container h1 {
-   text-align: center;
-   margin-bottom: 1em;
-}
-
 .list-item {
    display: flex;
    flex-direction: column;

@@ -29,17 +29,14 @@
 .summaries-item-cost{
     margin-left: auto;
 }
-@media (min-width: 1200px) {
-    .summaries-item-avatar{
-        max-width: 160px;
-        max-height: 160px;
-    }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-    .summaries-item-workName {
-        max-width: 60%;
-    }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+    .summaries-item-workName h2{
+        font-size: 19pt;
+    }
+    .summaries-item-workName {
+        max-width: 55%;
+    }
     .summaries-item-avatar{
         max-width: 170px;
         max-height: 170px;
@@ -47,6 +44,12 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    .summaries-item-workName h2{
+        font-size: 19pt;
+    }
+    .summaries-item-workName {
+        max-width: 55%;
+    }
     .summaries-item-avatar{
         max-width: 150px;
         max-height: 150px;
@@ -62,7 +65,7 @@
         font-size: 14pt;
     }
     .summaries-item-workName {
-        max-width: 60%;
+        max-width: 55%;
     }
     .summaries-description-list-block p{
         font-size: 10pt;

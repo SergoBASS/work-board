@@ -113,25 +113,21 @@ const AdvertisementsSummaries = observer(() => {
     const filterAdvData = (employmentValue, scheduleValue) => {//ФИЛЬТР ВАКАНСИЙ
         advertisement.setPage(1)
         if (employmentValue !== 'all' || scheduleValue !== 'all') {
-            advertisement.setPage(1)
             setAdvertisementFillter({ status: true, employmentValue: employmentValue, scheduleValue: scheduleValue })
         }
         else {
-            advertisement.setPage(1)
             setAdvertisementFillter({ status: false, employmentValue: 'all', scheduleValue: 'all' })
         }
     }
 
     const filterSmryData = (employmentValue, experienceValue, educationValue) => {//ФИЛЬТР РЕЗЮМЕ
+        summary.setPage(1)
         if (employmentValue !== 'all' || experienceValue !== 'all' || educationValue !== 'all') {
-            summary.setPage(1)
             setSummaryFillter({ status: false, employmentValue: employmentValue, experienceValue: experienceValue, educationValue: educationValue })
         }
         else {
-            summary.setPage(1)
             setSummaryFillter({ status: false, employmentValue: 'all', experienceValue: 'all', educationValue: 'all' })
         }
-
     }
 
     return (

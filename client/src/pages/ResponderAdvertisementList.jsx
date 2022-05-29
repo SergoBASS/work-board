@@ -26,11 +26,10 @@ const ResponderAdvertisementList = () => {
             {
                 Object.keys(respondersAdvertisements).length === 0
                 ?
-                <h1>Ничего не найдено</h1>
+                <h1 className='response-title'>Ничего не найдено</h1>
                 :
                 <AdvertisementsList advertisement={respondersAdvertisements} />
             }
-            
         </Container>
     );
 };

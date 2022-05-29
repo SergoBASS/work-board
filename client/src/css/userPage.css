@@ -1,9 +1,19 @@
-.summaryAdvertisements-user-page-content .advertisements-item-title h2{
+.summaryAdvertisements-user-page-content .advertisements-item-title h2 {
     text-align: left;
 }
+
 .responder-header {
     display: flex;
     flex-direction: row;
+}
+.list-container {
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+}
+
+.list-container .response-title {
+    text-align: center;
 }
 
 .list-item .responder-title {
@@ -18,28 +28,32 @@
     padding: 10px 0;
 }
 
-.list-container {
-    width: 100%;
-}
-.list-container .response-title{
-    margin-top: 1em;
-}
-.list-container h1 {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
 .user-page-main {
     padding: 1em;
     border-top: 0;
- }
- 
- .user-page-main h1, .user-page-main h2 {
+}
+
+.user-page-main h1, .user-page-main h2 {
     text-align: center;
- }
+}
+
+.user-page-main .responder-adv-list {
+    margin-bottom: 1em;
+}
+
+.user-page-main .list-item h2 {
+    text-align: left;
+}
+
 
 
 @media (max-width: 767px) {
+    .list-container .response-title {
+        font-size: 14pt;
+    }
+    .nothing-to-find{
+        font-size: 14pt;
+    }
     .tab h1 {
         font-size: 14pt;
     }
@@ -54,6 +68,12 @@
 }
 
 @media (max-width: 510px) {
+    .nothing-to-find{
+        font-size: 12pt;
+    }
+    .list-container .response-title {
+        font-size: 12pt;
+    }
     .tabh1 {
         font-size: 12pt;
     }

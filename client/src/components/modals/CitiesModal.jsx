@@ -21,6 +21,8 @@ const CitiesModal = ({ show, onHide }) => {
             city.setCity(searchQuery.split(', ')[0])
             city.setRegion(searchQuery.split(', ')[1])
             onHide(true)
+        } else if (searchQuery.length === 0) {
+            clearCity()
         }
     }
 
@@ -48,7 +50,6 @@ const CitiesModal = ({ show, onHide }) => {
         city.setClearCity()
         onHide(true)
     }
-
 
     return (
         <Modal

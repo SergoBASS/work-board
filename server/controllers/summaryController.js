@@ -3,9 +3,7 @@ const ApiError = require('../error/ApiError');
 const uuid = require('uuid')
 const path = require('path')
 const fs = require('fs')
-//const jwt = require('jsonwebtoken')
 const Sequelize = require('sequelize');
-
 
 class SummaryController {
     async create(req, res, next) {

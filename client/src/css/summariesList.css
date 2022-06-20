@@ -17,6 +17,7 @@
     border-radius: 35px;
 }
 .summaries-description-list-block{
+    min-height: 180px;
     display: flex;
     flex-direction: row;
     margin-bottom: auto;
@@ -31,6 +32,9 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    .summaries-description-list-block{
+        min-height: 170px;
+    }
     .summaries-item-workName h2{
         font-size: 19pt;
     }
@@ -49,6 +53,9 @@
     }
     .summaries-item-workName {
         max-width: 55%;
+    }
+    .summaries-description-list-block{
+        min-height: 150px;
     }
     .summaries-item-avatar{
         max-width: 150px;
@@ -70,6 +77,12 @@
     .summaries-description-list-block p{
         font-size: 10pt;
     }
+    .summaries-description-list-block small{
+        font-size: 9pt;
+    }
+    .summaries-description-list-block{
+        min-height: 120px;
+    }
     .summaries-item-avatar{
         max-width: 120px;
         max-height: 120px;
@@ -89,6 +102,12 @@
     }
     .summaries-description-list-block p{
         font-size: 8pt;
+    }
+    .summaries-description-list-block small{
+        font-size: 7pt;
+    }
+    .summaries-description-list-block{
+        min-height: 100px;
     }
     .summaries-item-avatar{
         max-width: 100px;

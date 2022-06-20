@@ -46,7 +46,7 @@ const CreateSummary = () => {
         }
     }
 
-    const addSummary = () => {
+    const addSummary = async () => {
         try {
             const formData = new FormData()
             formData.append('city', userCity.value)
@@ -67,7 +67,7 @@ const CreateSummary = () => {
             formData.append('avatar', userAvatar)
             formData.append('userId', user._user.id)
             history.push(ADVERTISMENTS_AND_SUMMARIES_ROUTE)
-            createSummary(formData)
+            await createSummary(formData)
         } catch (error) {
             console.log(error)
         }
